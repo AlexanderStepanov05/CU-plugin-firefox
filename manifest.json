@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Course Cleaner",
+    "version": "1.0",
+    "icons": {
+        "16": "icons/cu.png",
+        "48": "icons/cu.png",
+        "128": "icons/cu.png"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://my.centraluniversity.ru/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://my.centraluniversity.ru/learn/*"],
+            "js": ["server/content.js"],
+            "css": ["server/content.css"],
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+        "service_worker": "server/background.js"
+    },
+    "action": {
+        "default_popup": "popup/popup.html"
+    }
+}
