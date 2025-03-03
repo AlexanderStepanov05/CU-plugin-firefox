@@ -28,5 +28,11 @@
     },
     "action": {
         "default_popup": "popup/popup.html"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "course-cleaner@example.com",
+            "strict_min_version": "109.0"
+        }
     }
 }
